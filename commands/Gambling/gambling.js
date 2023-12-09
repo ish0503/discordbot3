@@ -35,6 +35,16 @@ module.exports = {
         }
 
         const win_standard = Math.round(Math.random() * 100)
+
+        const embed2 = new EmbedBuilder()
+            .setTitle(`이길확률: ${win_standard}%`)
+            .setColor("Gray")
+            .setDescription(`두구두구.. 카드를 뽑습니다..`)
+
+        interaction.reply({embeds:[embed2]})
+
+        await sleep(2000)
+        
         const random_number = Math.round(Math.random() * 100)
 
         if (win_standard > random_number){
@@ -49,7 +59,7 @@ module.exports = {
             .setColor("Green")
             .setDescription(`**이길 확률 ${win_standard}% 에서 승리하셨습니다!\n+${bettingGold.toLocaleString()}**`)
 
-            interaction.reply({embeds:[embed]})
+            interaction.editReply({embeds:[embed]})
         } else {
             //짐
             await gambling_Schema.updateOne(
@@ -62,7 +72,7 @@ module.exports = {
             .setColor("Red")
             .setDescription(`**이길 확률 ${win_standard}% 에서 패배하셨습니다..\n-${bettingGold.toLocaleString()}**`)
 
-            interaction.reply({embeds:[embed]})
+            interaction.editReply({embeds:[embed]})
         }
         
     }
