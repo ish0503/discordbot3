@@ -10,7 +10,7 @@ module.exports = {
      * @param {import(*discord.js*).ChatInputCommandInteraction} interaction
      */
     async execute(interaction){
-        await interaction.deferReply()
+        //await interaction.deferReply()
 
         const msg = await interaction.fetchReply()
         
@@ -19,6 +19,6 @@ module.exports = {
         .setDescription(`🏓 커맨드 핑: ${msg.createdTimestamp - interaction.createdTimestamp}ms\n🏓 봇 핑 : ${interaction.client.ws.ping}ms`)
         .setColor(0xFFFF00)
 
-        interaction.editReply({ embeds: [embed] })
+        interaction.reply({ embeds: [embed] })
     }
 }
