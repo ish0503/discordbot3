@@ -14,10 +14,6 @@ module.exports = {
     .setDescription("Open a botshop in your server"),
 
   async execute(interaction) {
-    const channel = await interaction.guild.channels.cache.get(
-      "1033249144292261928"
-    );
-    if (!channel) return;
     interaction.reply({ content: "Opened Botshop for everyone", ephemeral: true })
     const embed = new EmbedBuilder()
     .setTitle("🛒 BotShop")
