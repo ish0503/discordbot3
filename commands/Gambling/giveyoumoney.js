@@ -52,13 +52,6 @@ module.exports = {
             return;
         }
 
-        if (number <= 0){
-            interaction.reply({
-                content: `**이 사람 나쁜사람이네 이거 ㅋㅋ**`,
-            });
-            return;
-        }
-
         await gambling_Schema.updateOne(
             {userid: userID},
             {money: Number(gambling_find2.money) - number, cooltime: gambling_find2.cooltime},
