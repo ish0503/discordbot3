@@ -12,10 +12,11 @@ module.exports = {
         .setDescription('돈을 받을 유저')
         .setRequired(true)
     )
-    .addNumberOption(option => 
+    .addIntegerOption(option => 
         option
         .setName('수치')
         .setDescription('돈을 줄 수치')
+        .setMinValue(100)
         .setRequired(true)
     ),
 
@@ -24,7 +25,7 @@ module.exports = {
      * @param {import(*discord.js*).ChatInputCommandInteraction} interaction
      */
     async execute(interaction){
-        const number = interaction.options.getNumber('수치');
+        const number = interaction.options.getInteger("수치",true)
         const user = interaction.options.getUser('유저')
         const id = user?.id
         var userID = interaction.user.id;
