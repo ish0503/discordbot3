@@ -39,7 +39,7 @@ module.exports = {
 
         const embed2 = new EmbedBuilder()
             .setTitle(`이길확률: ${win_standard}%`)
-            .setColor("Gray")
+            .setColor("Grey")
             .setDescription(`두구두구.. 카드를 뽑습니다..`)
 
         interaction.reply({embeds:[embed2]})
