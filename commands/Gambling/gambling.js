@@ -1,6 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 const gambling_Schema = require("../../models/Money")
-import wait from "waait"
 
 module.exports = {
     data: new SlashCommandBuilder()
