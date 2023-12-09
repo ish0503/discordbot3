@@ -43,7 +43,7 @@ module.exports = {
 
         interaction.reply({embeds:[embed2]})
 
-        await wait(2000)
+        await sleep(2000)
         
         const random_number = Math.round(Math.random() * 100)
 
