@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 const gambling_Schema = require("../../models/Money")
+const wait = require('node:timers/promises').setTimeout
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -43,7 +44,7 @@ module.exports = {
 
         interaction.reply({embeds:[embed2]})
 
-        await sleep(2000)
+        await wait(2000)
         
         const random_number = Math.round(Math.random() * 100)
 
